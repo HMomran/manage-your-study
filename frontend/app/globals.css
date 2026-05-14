@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-navy font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-teal text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 active:scale-95 transition-all duration-150 w-full text-center;
+  }
+  .btn-gold {
+    @apply bg-gold text-navy font-semibold py-3 px-6 rounded-xl hover:opacity-90 active:scale-95 transition-all duration-150 w-full text-center;
+  }
+  .btn-outline {
+    @apply border-2 border-teal text-teal font-semibold py-3 px-6 rounded-xl hover:bg-teal hover:text-white active:scale-95 transition-all duration-150 w-full text-center;
+  }
+  .btn-danger {
+    @apply bg-crit text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 active:scale-95 transition-all duration-150;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-light p-5;
+  }
+  .input {
+    @apply w-full border border-light rounded-xl px-4 py-3 text-navy bg-white focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all;
+  }
+  .label {
+    @apply block text-sm font-medium text-navy mb-1;
+  }
+  .badge-critical {
+    @apply bg-crit/10 text-crit text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-moderate {
+    @apply bg-mod/20 text-orange-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-low {
+    @apply bg-low/20 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-open {
+    @apply bg-teal/10 text-teal text-xs font-semibold px-3 py-1 rounded-full;
+  }
+  .badge-in_progress {
+    @apply bg-gold/20 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+  .badge-resolved {
+    @apply bg-low/20 text-green-700 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+}
