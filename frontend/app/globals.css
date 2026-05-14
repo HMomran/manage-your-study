@@ -17,16 +17,16 @@
     @apply bg-gold text-navy font-semibold py-3 px-6 rounded-xl hover:opacity-90 active:scale-95 transition-all duration-150 w-full text-center;
   }
   .btn-outline {
-    @apply border-2 border-teal text-teal font-semibold py-3 px-6 rounded-xl hover:bg-teal hover:text-white active:scale-95 transition-all duration-150 w-full text-center;
+    @apply border-2 border-teal text-teal font-semibold py-2.5 px-4 sm:py-3 sm:px-6 rounded-xl hover:bg-teal hover:text-white active:scale-95 transition-all duration-150 w-full text-center;
   }
   .btn-danger {
     @apply bg-crit text-white font-semibold py-3 px-6 rounded-xl hover:opacity-90 active:scale-95 transition-all duration-150;
   }
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-light p-5;
+    @apply bg-white rounded-2xl shadow-sm border border-light p-4 sm:p-5;
   }
   .input {
-    @apply w-full border border-light rounded-xl px-4 py-3 text-navy bg-white focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all;
+    @apply w-full min-w-0 border border-light rounded-xl px-3 py-2.5 sm:px-4 sm:py-3 text-navy bg-white focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/20 transition-all;
   }
   .label {
     @apply block text-sm font-medium text-navy mb-1;

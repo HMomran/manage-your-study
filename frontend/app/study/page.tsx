@@ -234,18 +234,18 @@ export default function StudyPlannerPage() {
   }
 
   return (
-    <div className="py-4 space-y-6">
+    <div className="py-3 sm:py-4 space-y-4 sm:space-y-6">
       <section className="space-y-3">
-        <div className="inline-flex items-center gap-2 bg-teal/10 text-teal text-sm font-semibold px-4 py-1.5 rounded-full">
+        <div className="inline-flex items-center gap-2 bg-teal/10 text-teal text-xs sm:text-sm font-semibold px-3 sm:px-4 py-1.5 rounded-full">
           <BookOpen className="w-4 h-4" />
           Study manager
         </div>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-navy leading-tight">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 sm:gap-4">
+          <div className="min-w-0">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy leading-tight">
               Manage your study day by day.
             </h1>
-            <p className="text-muted max-w-2xl mt-2">
+            <p className="text-sm sm:text-base text-muted max-w-2xl mt-2 leading-relaxed">
               Add your subjects, choose the dates, and check off each day. Unfinished material moves forward automatically.
             </p>
           </div>
@@ -256,30 +256,30 @@ export default function StudyPlannerPage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="card">
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+        <div className="card min-w-0">
           <CalendarDays className="w-5 h-5 text-teal mb-2" />
-          <div className="text-2xl font-bold text-navy">{days}</div>
+          <div className="text-xl sm:text-2xl font-bold text-navy">{days}</div>
           <div className="text-xs text-muted">Study days</div>
         </div>
-        <div className="card">
+        <div className="card min-w-0">
           <BookOpen className="w-5 h-5 text-gold mb-2" />
-          <div className="text-2xl font-bold text-navy">{subjects.length}</div>
+          <div className="text-xl sm:text-2xl font-bold text-navy">{subjects.length}</div>
           <div className="text-xs text-muted">Subjects</div>
         </div>
-        <div className="card">
+        <div className="card min-w-0">
           <CheckCircle2 className="w-5 h-5 text-low mb-2" />
-          <div className="text-2xl font-bold text-navy">{finishedLessons}/{totalLessons}</div>
+          <div className="text-xl sm:text-2xl font-bold text-navy break-words">{finishedLessons}/{totalLessons}</div>
           <div className="text-xs text-muted">Lessons finished</div>
         </div>
-        <div className="card">
+        <div className="card min-w-0">
           <Clock className="w-5 h-5 text-crit mb-2" />
-          <div className="text-2xl font-bold text-navy">{averageDailyLessons}</div>
+          <div className="text-xl sm:text-2xl font-bold text-navy">{averageDailyLessons}</div>
           <div className="text-xs text-muted">Target per day</div>
         </div>
       </section>
 
-      <section className="grid lg:grid-cols-[1fr_1.15fr] gap-5 items-start">
+      <section className="grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)] gap-4 sm:gap-5 items-start">
         <div className="space-y-4">
           <div className="card space-y-4">
             <div className="grid sm:grid-cols-2 gap-3">
@@ -308,7 +308,7 @@ export default function StudyPlannerPage() {
 
             <div className="flex items-center justify-between gap-3">
               <h2 className="text-lg font-bold text-navy">Subjects</h2>
-              <button onClick={addSubject} className="bg-teal text-white h-10 px-4 rounded-xl font-semibold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+              <button onClick={addSubject} className="bg-teal text-white h-10 px-3 sm:px-4 rounded-xl font-semibold flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shrink-0">
                 <Plus className="w-4 h-4" />
                 Add
               </button>
@@ -322,7 +322,7 @@ export default function StudyPlannerPage() {
               <div className="space-y-3">
                 {subjects.map(subject => (
                   <div key={subject.id} className="border border-light rounded-xl p-3 space-y-3 bg-surface/50">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 min-w-0">
                       <input
                         aria-label="Subject name"
                         className="input"
@@ -333,13 +333,13 @@ export default function StudyPlannerPage() {
                       <button
                         aria-label={`Remove ${subject.name || 'subject'}`}
                         onClick={() => removeSubject(subject.id)}
-                        className="h-12 w-12 shrink-0 rounded-xl border border-light bg-white text-crit flex items-center justify-center hover:bg-crit hover:text-white transition-colors"
+                        className="h-11 sm:h-12 w-11 sm:w-12 shrink-0 rounded-xl border border-light bg-white text-crit flex items-center justify-center hover:bg-crit hover:text-white transition-colors"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-3">
                       <label className="block">
                         <span className="label">Lessons</span>
                         <input
@@ -371,8 +371,8 @@ export default function StudyPlannerPage() {
           </div>
         </div>
 
-        <div className="card space-y-4">
-          <div className="flex items-center justify-between gap-3">
+        <div className="card space-y-4 min-w-0">
+          <div className="grid grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] sm:grid-cols-[3rem_minmax(0,1fr)_3rem] items-center gap-2 sm:gap-3">
             <button
               aria-label="Previous day"
               disabled={currentDay === 0}
@@ -382,9 +382,9 @@ export default function StudyPlannerPage() {
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            <div className="text-center">
+            <div className="text-center min-w-0">
               <p className="text-sm text-muted">{currentDate}</p>
-              <h2 className="text-xl font-bold text-navy">Day {currentDay + 1}</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-navy">Day {currentDay + 1}</h2>
             </div>
 
             <button
@@ -397,7 +397,7 @@ export default function StudyPlannerPage() {
             </button>
           </div>
 
-          <div className="flex items-center justify-between gap-3 border-y border-light py-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 border-y border-light py-3">
             <span className="text-sm text-muted">Material on this day</span>
             <span className="badge-open">{activeLessons} lesson{activeLessons === 1 ? '' : 's'}</span>
           </div>
@@ -419,13 +419,13 @@ export default function StudyPlannerPage() {
                 return (
                   <label
                     key={`${currentDay}-${task.id}`}
-                    className={`flex items-center gap-3 border rounded-xl p-3 transition-colors ${isDone ? 'border-low bg-low/10' : 'border-light bg-white'}`}
+                    className={`flex items-center gap-3 border rounded-xl p-3 transition-colors min-w-0 ${isDone ? 'border-low bg-low/10' : 'border-light bg-white'}`}
                   >
                     <input
                       type="checkbox"
                       checked={isDone}
                       onChange={() => toggleTask(task.id)}
-                      className="h-5 w-5 accent-teal"
+                      className="h-5 w-5 shrink-0 accent-teal"
                     />
                     <span className="min-w-0 flex-1">
                       <span className={`block font-semibold ${isDone ? 'text-muted line-through' : 'text-navy'}`}>
